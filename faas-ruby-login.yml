@@ -1,0 +1,16 @@
+provider:
+  name: faas
+  gateway: http://127.0.0.1:8080
+
+functions:
+  faas-ruby-login:
+    lang: ruby
+    handler: ./faas-ruby-login
+    image: affixxx/faas-ruby-login
+    environment:
+      public_key: <BASE64_RSA_PUBLIC_KEY>
+      private_key: <BASE64_RSA_PRIVATE_KEY>
+      mysql_host: mysql
+      mysql_user: root
+      mysql_password:
+      mysql_database: users
