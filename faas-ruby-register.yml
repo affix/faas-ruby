@@ -1,0 +1,14 @@
+provider:
+  name: faas
+  gateway: http://127.0.0.1:8080
+
+functions:
+  faas-ruby-register:
+    lang: ruby
+    handler: ./faas-ruby-register
+    image: affixxx/faas-ruby-register
+    environment:
+      mysql_host: <HOST>
+      mysql_user: <USERNAME>
+      mysql_password: <PASSWORD>
+      mysql_database: <DB>
